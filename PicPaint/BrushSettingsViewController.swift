@@ -40,7 +40,7 @@ class BrushSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        drawPreview()
         // Do any additional setup after loading the view.
     }
 
@@ -73,8 +73,8 @@ class BrushSettingsViewController: UIViewController {
         
         CGContextSetLineCap(context, kCGLineCapRound)
         CGContextSetLineWidth(context, brush)
-        CGContextMoveToPoint(context, 45.0, 45.0)
-        CGContextAddLineToPoint(context, 45.0, 45.0)
+        CGContextMoveToPoint(context, 60.0, 60.0)
+        CGContextAddLineToPoint(context, 60.0, 60.0)
         
         CGContextSetRGBStrokeColor(context, red, green, blue, opacity)
         CGContextStrokePath(context)

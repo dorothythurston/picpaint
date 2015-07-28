@@ -37,7 +37,6 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func didPressShare(sender: UIBarButtonItem) {
-        // TODO: Merge all Image Views into one mainImageView
         UIGraphicsBeginImageContext(mainImageView.bounds.size)
         mainImageView.image?.drawInRect(CGRect(x: 0, y: 0,
             width: mainImageView.frame.size.width, height: mainImageView.frame.size.height))
@@ -72,6 +71,7 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             mainImageView.image = image
+            
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -89,16 +89,15 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         swiped = false
         if let touch = touches.first as? UITouch {
-            lastPoint = touch.locationInView(self.view)
+            lastPoint = touch.locationInView(tempDrawImageView)
         }
        
     }
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
-        
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContext(tempDrawImageView.frame.size)
         let context = UIGraphicsGetCurrentContext()
-        tempDrawImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        tempDrawImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: tempDrawImageView.frame.size.width, height: tempDrawImageView.frame.size.height))
         
         CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
@@ -119,7 +118,7 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         swiped = true
         if let touch = touches.first as? UITouch {
-            let currentPoint = touch.locationInView(view)
+            let currentPoint = touch.locationInView(tempDrawImageView)
             drawLineFrom(lastPoint, toPoint: currentPoint)
             
             lastPoint = currentPoint
