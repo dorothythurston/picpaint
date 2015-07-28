@@ -25,7 +25,15 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: - Actions
     
     @IBAction func didPressDelete(sender: UIBarButtonItem) {
-        mainImageView.image = nil
+        let deleteImageAlert = UIAlertController(title: "Delete Drawing?", message: "This action cannot be undone", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        deleteImageAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (action: UIAlertAction!) in
+            self.mainImageView.image = nil
+        }))
+        
+        deleteImageAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        presentViewController(deleteImageAlert, animated: true, completion: nil)
     }
     
     @IBAction func didPressShare(sender: UIBarButtonItem) {
