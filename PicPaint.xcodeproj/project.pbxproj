@@ -13,6 +13,7 @@
 		B8A1D3EB1B6717870099D13E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A1D3E91B6717870099D13E /* LaunchScreen.xib */; };
 		B8A1D3F71B6717870099D13E /* PicPaintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1D3F61B6717870099D13E /* PicPaintTests.swift */; };
 		B8A1D4011B6718360099D13E /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1D4001B6718360099D13E /* ImageEditorViewController.swift */; };
+		B8A1D4031B671A9F0099D13E /* BrushSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1D4021B671A9F0099D13E /* BrushSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B8A1D3F51B6717870099D13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A1D3F61B6717870099D13E /* PicPaintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPaintTests.swift; sourceTree = "<group>"; };
 		B8A1D4001B6718360099D13E /* ImageEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
+		B8A1D4021B671A9F0099D13E /* BrushSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrushSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				B8A1D4001B6718360099D13E /* ImageEditorViewController.swift */,
 				B8A1D3E01B6717870099D13E /* AppDelegate.swift */,
 				B8A1D3E41B6717870099D13E /* Main.storyboard */,
+				B8A1D4021B671A9F0099D13E /* BrushSettingsViewController.swift */,
 				B8A1D3E71B6717870099D13E /* Images.xcassets */,
 				B8A1D3E91B6717870099D13E /* LaunchScreen.xib */,
 				B8A1D3DE1B6717870099D13E /* Supporting Files */,
@@ -214,6 +217,7 @@
 			files = (
 				B8A1D3E11B6717870099D13E /* AppDelegate.swift in Sources */,
 				B8A1D4011B6718360099D13E /* ImageEditorViewController.swift in Sources */,
+				B8A1D4031B671A9F0099D13E /* BrushSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
