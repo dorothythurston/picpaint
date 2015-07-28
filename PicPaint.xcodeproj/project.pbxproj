@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B8A1D3E11B6717870099D13E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1D3E01B6717870099D13E /* AppDelegate.swift */; };
-		B8A1D3E31B6717870099D13E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1D3E21B6717870099D13E /* ViewController.swift */; };
 		B8A1D3E61B6717870099D13E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A1D3E41B6717870099D13E /* Main.storyboard */; };
 		B8A1D3E81B6717870099D13E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A1D3E71B6717870099D13E /* Images.xcassets */; };
 		B8A1D3EB1B6717870099D13E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A1D3E91B6717870099D13E /* LaunchScreen.xib */; };
 		B8A1D3F71B6717870099D13E /* PicPaintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1D3F61B6717870099D13E /* PicPaintTests.swift */; };
+		B8A1D4011B6718360099D13E /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1D4001B6718360099D13E /* ImageEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		B8A1D3DB1B6717870099D13E /* PicPaint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicPaint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A1D3DF1B6717870099D13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A1D3E01B6717870099D13E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B8A1D3E21B6717870099D13E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8A1D3E51B6717870099D13E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8A1D3E71B6717870099D13E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B8A1D3EA1B6717870099D13E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B8A1D3F01B6717870099D13E /* PicPaintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicPaintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A1D3F51B6717870099D13E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A1D3F61B6717870099D13E /* PicPaintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPaintTests.swift; sourceTree = "<group>"; };
+		B8A1D4001B6718360099D13E /* ImageEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 		B8A1D3DD1B6717870099D13E /* PicPaint */ = {
 			isa = PBXGroup;
 			children = (
+				B8A1D4001B6718360099D13E /* ImageEditorViewController.swift */,
 				B8A1D3E01B6717870099D13E /* AppDelegate.swift */,
-				B8A1D3E21B6717870099D13E /* ViewController.swift */,
 				B8A1D3E41B6717870099D13E /* Main.storyboard */,
 				B8A1D3E71B6717870099D13E /* Images.xcassets */,
 				B8A1D3E91B6717870099D13E /* LaunchScreen.xib */,
@@ -212,8 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8A1D3E31B6717870099D13E /* ViewController.swift in Sources */,
 				B8A1D3E11B6717870099D13E /* AppDelegate.swift in Sources */,
+				B8A1D4011B6718360099D13E /* ImageEditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +409,7 @@
 				B8A1D3FC1B6717870099D13E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8A1D3FD1B6717870099D13E /* Build configuration list for PBXNativeTarget "PicPaintTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				B8A1D3FF1B6717870099D13E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
