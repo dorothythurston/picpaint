@@ -35,11 +35,11 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UbR-iG-dSP"/>
-                                    <barButtonItem title="Item" id="H9Q-Fp-cDh"/>
+                                    <barButtonItem systemItem="camera" id="H9Q-Fp-cDh"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="sD3-dr-Vvr"/>
-                                    <barButtonItem title="Item" id="6im-It-dk0"/>
+                                    <barButtonItem image="Photo Roll" id="6im-It-dk0"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="3wE-Jt-Krl"/>
-                                    <barButtonItem title="Item" id="rlK-0v-6FA"/>
+                                    <barButtonItem image="Brush" id="rlK-0v-6FA"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w6O-Ls-iqi"/>
                                 </items>
                             </toolbar>
@@ -148,4 +148,9 @@
             <point key="canvasLocation" x="913" y="319"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Brush" width="24" height="24"/>
+        <image name="Photo Roll" width="24" height="24"/>
+    </resources>
+    <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
