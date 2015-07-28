@@ -20,6 +20,15 @@ class ImageEditorViewController: UIViewController {
     @IBAction func didPressDelete(sender: UIBarButtonItem) {
     }
     @IBAction func didPressShare(sender: UIBarButtonItem) {
+        // TODO: Merge all Image Views into one mainImageView
+        UIGraphicsBeginImageContext(mainImageView.bounds.size)
+        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0,
+            width: mainImageView.frame.size.width, height: mainImageView.frame.size.height))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        presentViewController(activity, animated: true, completion: nil)
     }
     
     @IBAction func didPressTakePhoto(sender: UIBarButtonItem) {

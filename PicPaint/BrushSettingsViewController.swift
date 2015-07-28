@@ -10,6 +10,9 @@ import UIKit
 
 class BrushSettingsViewController: UIViewController {
 
+    @IBAction func didPressClose(sender: UIBarButtonItem) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
