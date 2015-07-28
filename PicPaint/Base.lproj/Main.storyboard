@@ -146,18 +146,33 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="jEW-SU-0Ly">
                                 <rect key="frame" x="274" y="189" width="118" height="31"/>
+                                <connections>
+                                    <action selector="propertyChanged:" destination="xls-Un-JZ7" eventType="valueChanged" id="QZo-4G-UKy"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="r9Z-l7-Bt3">
                                 <rect key="frame" x="274" y="255" width="118" height="31"/>
+                                <connections>
+                                    <action selector="propertyChanged:" destination="xls-Un-JZ7" eventType="valueChanged" id="Gb3-rt-Aum"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="MOY-0K-NAz">
                                 <rect key="frame" x="274" y="335" width="118" height="31"/>
+                                <connections>
+                                    <action selector="colorChanged:" destination="xls-Un-JZ7" eventType="valueChanged" id="69d-16-bqJ"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="4ql-Pl-mm0">
                                 <rect key="frame" x="274" y="404" width="118" height="31"/>
+                                <connections>
+                                    <action selector="colorChanged:" destination="xls-Un-JZ7" eventType="valueChanged" id="1FJ-j0-E9M"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-MY-EhX">
                                 <rect key="frame" x="274" y="470" width="118" height="31"/>
+                                <connections>
+                                    <action selector="colorChanged:" destination="xls-Un-JZ7" eventType="valueChanged" id="sHI-Vb-GVE"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeX-fs-geh">
                                 <rect key="frame" x="164" y="339" width="32" height="21"/>
@@ -192,6 +207,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imageViewBrush" destination="nmO-M5-uNf" id="0Vj-aG-SNo"/>
+                        <outlet property="sliderBlue" destination="4ql-Pl-mm0" id="3Ws-NA-KRo"/>
+                        <outlet property="sliderBrush" destination="jEW-SU-0Ly" id="6ot-pV-jz7"/>
+                        <outlet property="sliderGreen" destination="3hQ-MY-EhX" id="AJ6-l5-w9O"/>
+                        <outlet property="sliderOpacity" destination="r9Z-l7-Bt3" id="1RG-Fj-uIC"/>
+                        <outlet property="sliderRed" destination="MOY-0K-NAz" id="wg7-aP-dwJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFs-jy-TrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
