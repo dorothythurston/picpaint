@@ -79,8 +79,8 @@
 		B8A1D3DD1B6717870099D13E /* PicPaint */ = {
 			isa = PBXGroup;
 			children = (
-				B8A1D4001B6718360099D13E /* ImageEditorViewController.swift */,
 				B8A1D3E01B6717870099D13E /* AppDelegate.swift */,
+				B8A1D4001B6718360099D13E /* ImageEditorViewController.swift */,
 				B8A1D3E41B6717870099D13E /* Main.storyboard */,
 				B8A1D4021B671A9F0099D13E /* BrushSettingsViewController.swift */,
 				B8A1D3E71B6717870099D13E /* Images.xcassets */,

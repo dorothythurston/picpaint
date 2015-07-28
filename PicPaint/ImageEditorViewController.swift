@@ -9,6 +9,25 @@
 import UIKit
 
 class ImageEditorViewController: UIViewController {
+    // MARK: - Properties
+    
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var tempDrawImageView: UIImageView!
+    
+    
+    // MARK: - Actions
+    
+    @IBAction func didPressDelete(sender: UIBarButtonItem) {
+    }
+    @IBAction func didPressShare(sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func didPressTakePhoto(sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func didPressAlbum(sender: UIBarButtonItem) {
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
