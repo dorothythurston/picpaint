@@ -70,8 +70,10 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            mainImageView.image = image
-            
+            UIGraphicsBeginImageContext(mainImageView.frame.size)
+            image.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
+            mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
