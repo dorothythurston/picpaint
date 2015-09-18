@@ -69,9 +69,9 @@ class BrushSettingsViewController: UIViewController {
     
     func drawPreview() {
         UIGraphicsBeginImageContext(imageViewBrush.frame.size)
-        var context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
         
-        CGContextSetLineCap(context, kCGLineCapRound)
+        CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, brush)
         CGContextMoveToPoint(context, 60.0, 60.0)
         CGContextAddLineToPoint(context, 60.0, 60.0)

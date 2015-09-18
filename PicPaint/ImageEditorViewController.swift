@@ -10,7 +10,7 @@ import UIKit
 
 class ImageEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: - Properties
-    var lastPoint = CGPoint.zeroPoint
+    var lastPoint = CGPoint.zero
     var red: CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
@@ -27,11 +27,11 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func didPressDelete(sender: UIBarButtonItem) {
         let deleteImageAlert = UIAlertController(title: "Delete Drawing?", message: "This action cannot be undone", preferredStyle: UIAlertControllerStyle.Alert)
         
-        deleteImageAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (action: UIAlertAction!) in
+        deleteImageAlert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (action: UIAlertAction) in
             self.mainImageView.image = nil
         }))
         
-        deleteImageAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+        deleteImageAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction) in
         }))
         presentViewController(deleteImageAlert, animated: true, completion: nil)
     }
@@ -68,10 +68,10 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK: - UIImagePickerControllerDelegate
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             UIGraphicsBeginImageContext(mainImageView.frame.size)
-            image.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
+            image.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: CGBlendMode.Normal, alpha: 1.0)
             mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         }
@@ -88,9 +88,10 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
     
   
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>,
+        withEvent event: UIEvent?) {
         swiped = false
-        if let touch = touches.first as? UITouch {
+        if let touch = touches.first {
             lastPoint = touch.locationInView(tempDrawImageView)
         }
        
@@ -104,10 +105,10 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
         CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
         
-        CGContextSetLineCap(context, kCGLineCapRound)
+        CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, brushWidth)
         CGContextSetRGBStrokeColor(context, red, green, blue, 1.0)
-        CGContextSetBlendMode(context, kCGBlendModeNormal)
+        CGContextSetBlendMode(context, CGBlendMode.Normal)
         
         CGContextStrokePath(context)
         
@@ -117,9 +118,9 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         swiped = true
-        if let touch = touches.first as? UITouch {
+        if let touch = touches.first {
             let currentPoint = touch.locationInView(tempDrawImageView)
             drawLineFrom(lastPoint, toPoint: currentPoint)
             
@@ -127,7 +128,7 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if !swiped {
             // draw a single point
@@ -136,8 +137,8 @@ class ImageEditorViewController: UIViewController, UIImagePickerControllerDelega
         
         // Merge tempImageView into mainImageView
         UIGraphicsBeginImageContext(mainImageView.frame.size)
-        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
-        tempDrawImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: kCGBlendModeNormal, alpha: opacity)
+        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: CGBlendMode.Normal, alpha: 1.0)
+        tempDrawImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: CGBlendMode.Normal, alpha: opacity)
         mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
